@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myWebsite</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="header">
+        <div id="nav-container">
+            <div id="photo">
+                <img src="images/photo.jpg" alt="头像">
+            </div>
+            <ul id="nav-content">
+                <li class="selected"><a class="selected" href="#">主页</a></li>
+                <li><a href="#">关于我</a></li>
+                <li><a href="#">简历</a></li>
+                <li><a href="#">工作经验</a></li>
+                <li><a href="#">联系我</a></li>
+            </ul>
+            <div id="nav-btn">
+                <span class="top-span"></span>
+                <span class="middle-span"></span>
+                <span class="bottom-span"></span>
+            </div>
+        </div>
+        <div id="text">
+            <h1>I'm JOHN DOE</h1>
+            <p>I'm a passionate UI/UX Designer and Front-End <br> Developer creating modern and responsive design <br>for Web and Mobile.
+                Let's start <br> scfadeIng and learn more about me.</p>
+        </div>
+        <div id="header-mask">
+            <h2>About&nbsp;&nbsp;&nbsp;Me</h2>
+        </div>
+    </div>
+    <div id="about-me">
+        <div id="about-left">
+            <div id="left-container">
+                <img src="images/photo.jpg" alt="">
+                <h3>John Doe</h3>
+                <p>UI/UX Developer</p>
+            </div>
+        </div>
+        <div id="about-right">
+            <div id="arrow-left"></div>
+            <p id="recom">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam</p>
+            <div id="hire-me">
+                <p>
+                    <a href="#">雇佣我</a>
+                    <a href="#">下载我的简历</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--<div></div>-->
+    <div id="resume">
+        <h1>我的技能</h1>
+        <div id="skill">
+            <div id="resume-left">
+                <h2><span>详细介绍</span></h2>
+            </div>
+            <div id="resume-right">
+                <ul>
+                    <li>
+                        <h3><span> ONE---------abcdefg</span></h3>
+                        <p>我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能</p>
+                    </li>
+                    <li>
+                        <h3><span> TWO---------abcdefg</span></h3>
+                        <p>我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能</p>
+                    </li>
+                    <li>
+                        <h3><span> THREE---------abcdefg</span></h3>
+                        <p>我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能我的第一项技能</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script>
+        $(function(){
+            var isNav = true;   //判断侧边菜单栏是否打开
+            var $navCon = $("#nav-container");
+            var $body = $("body")
+           $("#nav-btn").on("click",function(){
+               if(isNav){
+                   $navCon.animate({
+                       left:0
+                   },100);
+//                   $body.animate({
+//                       paddingLeft:200
+//                   },200);
+                   $body.addClass("show-menu");
+                   $(".middle-span").hide();
+                   $(".top-span").css({
+                       transform:"translateY("+13+"px)rotate("+ 45 + "deg)"
+                   });
+                   $(".bottom-span").css({
+                       transform:"rotate("+ -45 + "deg)"
+                   });
+                   isNav = !isNav;
+               }else{
+//                   $body.animate({
+//                       paddingLeft:0
+//                   },200);
+                   $body.removeClass("show-menu");
+                   $navCon.animate({
+                       left:-200
+                   },200);
+                   $(".middle-span").show();
+                   $(".top-span").css({
+                       transform:"rotate("+ 0 + "deg)"
+                   });
+                   $(".bottom-span").css({
+                       transform:"rotate("+ 0 + "deg)"
+                   });
+                   isNav = !isNav;
+               }
+
+           });
+
+
+        });
+    </script>
+</body>
+</html>
